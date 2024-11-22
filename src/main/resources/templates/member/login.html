@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인</title>
+    <style>
+        div{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 660px;
+            height: 500px;
+            background: #FFFFFF;
+            border: 1px solid #b3b3b3;
+            box-shadow: 7px 7px 39px rgb(133, 133, 133);
+            border-radius: 20px;
+            margin: 0px;
+            padding: 100px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+        }
+        h2{
+            width: 466px;
+            height: 94px;
+            left: 725px;
+            top: 132px;
+            font-family: 'Noto Sans CJK KR';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 47px;
+            text-align: center;
+            justify-content: space-evenly;
+        }
+        button {
+            width: 200px;
+            height: 50px;
+            background-color: #000000;
+            color: #ffffff;
+            border-radius: 20px;
+            display: block;
+            margin: 20px auto;
+        }
+        input {
+            padding: 0px;
+            border: none;
+            border-bottom: 1px solid #8f8f8f;
+            width: 466px;
+            height: 30px;
+        }
+        label {
+            color: lightgrey;
+        }
+        a {
+            color: black;
+            text-align: center;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div class = "container">
+        <h2>Login</h2>
+
+<form action="/member/login-process" method="post">
+    <label for="email">Email</label><br>
+    <input type="email" id="email" name="email" autocomplete="email" required><br><br>
+
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password" autocomplete="current-password" required><br>
+    <p th:if="${session.loginError}" style="color: red;">
+        <span th:text="${session.loginError}"></span>
+    </p>
+    <button type="submit">로그인</button>
+    <a href = "/member/join">회원가입</a>
+</form>
+</div>
+</div>
+</body>
+</html>

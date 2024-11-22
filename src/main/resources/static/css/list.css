@@ -1,0 +1,90 @@
+.list {
+    position: relative;
+    width: 1000px;
+    margin: 50px auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.table-container {
+    width: 100%;
+    position: relative;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    border-bottom: 1px solid #000000;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ececed;
+}
+
+th {
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: bold;
+    border-top: 3px solid #000000;
+    border-bottom: 3px solid #eeeeee;
+}
+
+td a {
+    text-decoration: none;
+    color: #000000;
+}
+
+td a:hover {
+    color: #000000;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.write-button {
+    padding: 8px 16px;
+    color: white;
+    background-color: #000000;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: bold;
+    position: absolute;
+    top: -30px;
+    right: 0;
+}
+h2{
+    margin-top: 30px;
+    text-align: center ;
+}
+.pagination {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.page-link {
+    padding: 8px 12px;
+    margin: 0 4px;
+    text-decoration: none;
+    color: #000000;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+}
+
+.page-link:hover {
+    background-color: #f0f0f0;
+}
+
+.active .page-link {
+    background-color: #000000;
+    color: white;
+    border-color: #000000;
+}

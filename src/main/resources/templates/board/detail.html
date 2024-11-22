@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>글</title>
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/detail.css">
+</head>
+<body>
+<div th:replace="~{fragments/header :: header}"></div>
+<div class="container-all">
+    <div class="container">
+        <div class="board">
+            <div class = "info">
+                <h4 th:text="${post.title}">제목</h4>
+                <small>
+                    <span th:text="${post.author}">작성자</span> |
+                    <span th:text="${#temporals.format(post.createdDate, 'yyyy-MM-dd HH:mm')}">날짜</span><br>
+                    <span>
+                    <img src="/images/view3.png"/>
+                    <span th:text="${post.views + 1}">5</span>
+                    </span>
+                </small>
+            </div>
+            <div class = content-cell th:text="${post.content}"></div>
+        </div>
+        <div class="button-group">
+            <a class="home-btn" th:href="@{'/'}" role="button">목록</a>
+            <a th:if="${isAuthor}" class="custom-edit-btn" th:href="@{'/board/post/edit/' + ${post.id}}" role="button">수정</a>
+            <form th:if="${isAuthor}" id="delete-form" th:action="@{'/board/post/' + ${post.id}}" method="post" style="margin-left: 10px;">
+                <input type="hidden" name="_method" value="delete" />
+                <button id="delete-btn" type="button" class="custom-delete-btn" onclick="deletePost();">삭제</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    function deletePost() {
+        // 확인 창 표시
+        var result = confirm("게시글을 삭제하시겠습니까?");
+        if (result) {
+            // 사용자가 확인을 클릭했을 때 폼을 제출
+            document.getElementById('delete-form').submit();
+        } else {
+            // 사용자가 취소를 클릭했을 때 아무 것도 하지 않음
+            return false;
+        }
+    }
+</script>
+</html>

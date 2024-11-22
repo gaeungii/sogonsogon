@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>글수정</title>
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/post.css">
+</head>
+<body>
+<div th:replace="~{fragments/header :: header}"></div>
+<div class="container">
+    <div class="write-box">
+        <h2>수정</h2><br>
+        <form th:action="@{'/board/post/edit/' + ${post.id}}" id ="edit-form" method="post">
+            <input type="hidden" name="_method" value="put" />
+            <input type="hidden" name="id" th:value="${post.id}" />
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+            <label for="inputTitle" class="col-sm-2 col-form-label">제목</label>
+            <input type="text" name="title" style="width:500px;"  id="inputTitle" th:value="${post.title}"/>
+            <label for="inputAuthor" >작성자</label>
+            <input type="text" name="author" id="inputAuthor" style="background-color: #ededed;" th:value="${post.author}" readonly/>
+            <label for="inputContent">내용</label>
+            <textarea name="content" id="inputContent" th:text="${post.content}"></textarea>
+            <button type="button" onclick="editPost();">수정</button>
+        </form>
+    </div>
+</div>
+</body>
+<script>
+    function editPost() {
+        var title = document.getElementById('inputTitle').value.trim();
+        var content = document.getElementById('inputContent').value.trim();
+        // 입력값 확인
+        if (!title || !content) {
+            alert("모든 필드를 입력해주세요."); // 빈 필드가 있을 경우 알림창 표시
+            return; // 함수를 종료하여 폼 제출 방지
+        }
+
+        // 확인 창 표시
+        var result = confirm("게시글을 수정하시겠습니까?");
+        if (result) {
+            // 사용자가 확인을 클릭했을 때 폼을 제출
+            document.getElementById('edit-form').submit();
+        } else {
+            // 사용자가 취소를 클릭했을 때 아무 것도 하지 않음
+            return false;
+        }
+    }
+</script>
+</html>

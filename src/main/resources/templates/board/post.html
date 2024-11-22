@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>글쓰기</title>
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/post.css">
+</head>
+<body>
+<div th:replace="~{fragments/header :: header}"></div>
+<div class="container">
+    <div class = "write-box">
+        <h2>글쓰기</h2><br>
+        <form action="/board/post" id="create-form" method="post">
+            <label for="title">제목</label>
+            <input type="text" style="width:500px;" name="title" id="title" />
+            <label for="author">작성자</label>
+            <input  type="text" name="author" id="author" />
+            <label for="content">내용</label>
+            <textarea name="content" id="content"></textarea><br>
+            <button type="button" onclick="createPost();">완료</button>
+        </form>
+    </div>
+</div>
+</body>
+<script>
+    function createPost() {
+        var title = document.getElementById('title').value.trim();
+        var author = document.getElementById('author').value.trim();
+        var content = document.getElementById('content').value.trim();
+
+        // 입력값 확인
+        if (!title || !author || !content) {
+            alert("모든 필드를 입력해주세요."); // 빈 필드가 있을 경우 알림창 표시
+            return; // 함수를 종료하여 폼 제출 방지
+        }
+
+        // 확인 창 표시
+        var result = confirm("게시글을 등록하시겠습니까?");
+        if (result) {
+            // 사용자가 확인을 클릭했을 때 폼을 제출
+            document.getElementById('create-form').submit();
+        } else {
+            // 사용자가 취소를 클릭했을 때 아무 것도 하지 않음
+            return false;
+        }
+    }
+</script>
+</html>
