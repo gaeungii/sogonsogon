@@ -1,0 +1,82 @@
+.container-all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 650px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+.board {
+    width: 1000px;
+    height: 500px;
+    padding: 20px;
+
+}
+img{
+    width: 20px;
+    height: 30px;
+    vertical-align: middle;
+    margin-bottom: 4px;
+}
+.info{
+    border: none;
+    border-top: 1px solid #757575;
+    border-bottom: 1px solid #757575;
+    background-color: #f2f4f5;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+.info h4{
+    margin-bottom: 25px;
+}
+.content-cell{
+    overflow:auto;
+    width: 100%;
+    height:350px;
+    border: none;
+    border-bottom: 1px solid #CFCFCF;
+    padding-top: 10px;
+}
+.home-btn{
+    color: black;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid #757575;
+    border-radius: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.custom-edit-btn {
+    color: black;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid #757575;
+    margin-left: 5px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.custom-delete-btn {
+    background-color: #070707;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 20px;
+    font-weight: bold;
+}
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+    width: 90%;
+    padding-right: 30px;
+    margin-top: -20px;
+}

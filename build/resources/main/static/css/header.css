@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: rgb(0, 0, 0);
+}
+
+.header_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* 메뉴와 로그인 부분을 양 끝으로 정렬 */
+    max-width: 1500px;
+    height: 80px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logo_container {
+    display: block;
+    margin: 5px 10px;
+}
+
+.logo_container a {
+    font-size: 30px;
+    font-weight: 500;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.login_container {
+    display: flex;
+    align-items: center; /* 수직 정렬 */
+}
+
+.login {
+    list-style: none;
+    display: flex;
+    margin-left: auto; /* 오른쪽으로 이동 */
+}
+
+.menu_title {
+    margin: 0 10px; /* 좌우 간격 조정 */
+    font-size: 14px; /* 글씨 크기 작게 조정 */
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}

@@ -1,0 +1,52 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 650px;
+    margin: 0;
+}
+
+.write-box {
+    width: 600px;
+    padding: 70px;
+}
+
+input {
+    padding: 0px;
+    border: 1px solid #9c9b9b;
+    height: 30px;
+    margin-bottom: 20px;
+}
+
+textarea {
+    padding: 0px;
+    border: 1px solid #b3b0b0;
+    width: 100%;
+    height: 300px;
+    margin-bottom: 20px;
+}
+
+label {
+    color: black;
+    display: block;
+    margin-bottom: 5px;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 20px;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    font-size: 12pt;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 5px;
+    border-bottom: 2px solid #757575;;
+}
