@@ -20,9 +20,10 @@
 - 댓글 생성/삭제
 
 ERD 다이어그램
+
 ![image](https://github.com/user-attachments/assets/7fa0b704-c88c-48ad-ad7c-7c1d5505207a)
 
-API 명세서
+API
 
 
 
